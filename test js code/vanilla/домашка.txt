@@ -1,0 +1,16 @@
+презинтації
+джаваскрипт хтмл (відаки ютуб)
+
+написати функцію на ласт наме...
+
+тесткейс(контакна форма з багатьох систем) по презинтації...
+
+npm init
+npm i --S webdriver-manager wd-interface
+npm run wd:update
+npm i --S mocha chai
+
+node a.js
+
+npm test
+
