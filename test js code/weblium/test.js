@@ -6,52 +6,59 @@ const Landing = require('./landing.selector');
 const Footer = require('./footer');
 
 describe('Weblium base example', () => {
-  let browser = null
-  const baseURL = 'https://weblium.com/'
+  let browser = null;
+  const baseURL = 'https://weblium.com/';
 
-  const pricing = element(Landing.pricing)
-  const about = element(Landing.about)
+  const pricing = element(Landing.pricing);
+  const about = element(Landing.about);
+  
   const footer = new Footer();
   //selectors
 
   before(async () => {
-    browser = client().chrome() // for dirrect connection to chromedriver client().chrome(true)
-    await browser.goTo(baseURL)
-  })
-
-  after(async () => {
-    await browser.closeBrowser()
-  })
-
-  it('assert base url', async () => {
-    const url = await browser.getUrl()
-    expect(url).to.eql(baseURL)
+    browser = client().chrome(); // for dirrect connection to chromedriver client().chrome(true)
+    await browser.goTo(baseURL);
   });
 
+  after(async () => {
+    await browser.closeBrowser();
+  });
+
+  it('assert base url', async () => {
+    const url = await browser.getUrl();
+    expect(url).to.eql(baseURL);
+  });
+/*
   it ('find footer', async () => {
     await footer.clickAbout();
   });
+*/
+  it ('click footerSelectors', async () => {
+    await footer;
+  })
+
+
 /*
   it('click pricing', async () => {
-    await pricing.waitForElement(2000)
-    await pricing.click()
-    const url = await browser.getUrl()
-    expect(url).to.contains('pricing')
+    await pricing.waitForElement(2000);
+    await pricing.click();
+    const url = await browser.getUrl();
+    expect(url).to.contains('pricing');
 
-    const borderPricing = element('body').getElements('.border')
+    const borderPricing = element('body').getElements('.border');
 
-    expect(await borderPricing.count()).to.eql(5)
-  })
+    expect(await borderPricing.count()).to.eql(5);
+  });
 
   it('click about', async () => {
-    await about.click()
+    await about.click();
 
-    const url = await browser.getUrl()
+    const url = await browser.getUrl();
 
-    expect(url).to.contains('about')
-    const aboutContainer = element('body').getElements('.container')
-    expect(await aboutContainer.count()).to.eql(7)
-  })
+    expect(url).to.contains('about');
+    const aboutContainer = element('body').getElements('.container');
+    expect(await aboutContainer.count()).to.eql(7);
+  });
 
 
 
