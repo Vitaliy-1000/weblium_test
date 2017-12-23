@@ -1,19 +1,37 @@
-/*async function asyncFunc(arg1) {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            console.log('async');
-        }, 500);
-    });
+/*
+
+function sum(arg1, arg2) {
+return arg1 + arg2;
 };
 
-async function waiter(params) {
-    const a = await asyncFunc();
-    console.log('next', a);
-};
-
-asyncFunc();
-console.log('next');
+console.log(sum(1, 2));
 */
 
-const Landing = require('./landing.selector');
-console.log(Landing.about);
+/*const arr = new Array(200).join('1 ').split(' ');
+
+function summ(arg1, arg2) {
+    return arr;
+};
+
+console.log(summ());
+*/
+
+const user = {
+    name: "Ivan",
+    secondname: "Grozhyi",
+    print: function(){
+        return "HELLO";
+    },
+    greeting: function() {
+        console.log(
+            "My name is: ",
+            this.name,
+            "My secondname is: ",
+            this.secondname,
+            "My age is: ",
+            this.age
+        );
+    },
+    age: 54
+};
+user.greeting();

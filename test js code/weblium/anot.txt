@@ -1,0 +1,11 @@
+~/Документы/weblium_test/test js code/weblium$ ---абсолютний шлях
+
+ls ./ --відносний шлях
+
+ls ../ --на дерикторію вище
+
+./node_modules/amd-zip -- в ці дерикторії/директорія node_modules/ директорія amd-zip
+
+
+
+

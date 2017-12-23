@@ -1,8 +1,9 @@
-const { expect } = require('chai')
+const { expect } = require('chai');
 
-const { client, element } = require('wd-interface')
+const { client, element, elements } = require('wd-interface');
 
-const Landing = require('./landing.selector')
+const Landing = require('./landing.selector');
+const Footer = require('./footer');
 
 describe('Weblium base example', () => {
   let browser = null
@@ -10,7 +11,7 @@ describe('Weblium base example', () => {
 
   const pricing = element(Landing.pricing)
   const about = element(Landing.about)
-
+  const footer = new Footer();
   //selectors
 
   before(async () => {
@@ -21,23 +22,25 @@ describe('Weblium base example', () => {
   after(async () => {
     await browser.closeBrowser()
   })
-/*
+
   it('assert base url', async () => {
     const url = await browser.getUrl()
     expect(url).to.eql(baseURL)
-  })
+  });
 
+  it ('find footer', async () => {
+    await footer.clickAbout();
+  });
+/*
   it('click pricing', async () => {
     await pricing.waitForElement(2000)
     await pricing.click()
     const url = await browser.getUrl()
     expect(url).to.contains('pricing')
 
-    const body = element('body')
+    const borderPricing = element('body').getElements('.border')
 
-    const borderPricing = await body.getElements('.border')
-
-    expect(borderPricing.length).to.eql(5)
+    expect(await borderPricing.count()).to.eql(5)
   })
 
   it('click about', async () => {
@@ -46,11 +49,10 @@ describe('Weblium base example', () => {
     const url = await browser.getUrl()
 
     expect(url).to.contains('about')
-    const body = element('body')
-    const aboutContainer = await body.getElements('.container')
-    expect(aboutContainer.length).to.eql(7)
+    const aboutContainer = element('body').getElements('.container')
+    expect(await aboutContainer.count()).to.eql(7)
   })
-*/
+
 
 
   it('login to my account', async () => {
@@ -84,4 +86,6 @@ describe('Weblium base example', () => {
     await profile.click();
     expect(await browser.getUrl()).to.contains('profile');
   });
+*/
+  
 });
