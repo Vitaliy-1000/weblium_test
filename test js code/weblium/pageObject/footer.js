@@ -1,6 +1,6 @@
 const { element, elements } = require('wd-interface');
 
-
+const Pricing = require('./pricing');
 
 class Footer {
     constructor() {
@@ -19,7 +19,7 @@ class Footer {
         const footer = await elements(this.footerSelector).get(21);
         const pricing = await footer.getElements('a').get(1);
         await pricing.click();
-    
+        return new Pricing();
     }
 
 
@@ -28,6 +28,7 @@ class Footer {
         const pricing = await footer.getElements('a').get(2);
         await pricing.click();
     }
+
    
 };
 
