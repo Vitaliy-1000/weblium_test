@@ -33,9 +33,23 @@ describe('Weblium base example', () => {
     await footer.clickAbout();
   });
 */
-  it ('click footerSelectors', async () => {
-    await footer;
-  })
+  it ('click clickAbout', async () => {
+    await footer.clickAbout();
+    await browser.goTo(baseURL);
+  });
+
+  it ('click clickPricing', async () => {
+    await footer.clickPricing();
+    await browser.goTo(baseURL);
+  });
+
+  it ('click clickPortfolio', async () => {
+    await footer.clickPortfolio();
+    await browser.goTo(baseURL);
+  });
+
+
+
 
 
 /*
