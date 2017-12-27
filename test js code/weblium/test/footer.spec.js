@@ -29,12 +29,14 @@ describe('landing lincks', () => {
         expect(await pricing.getPageTitleText()).to.contains('Pricing');
         expect(await pricing.getUSDPrice()).to.eql('$399');
         expect(await pricing.getMonthlyPrice()).to.eql('$15');
+
+        expect(await pricing.getAnnualPrice()).to.eql('$10.5');
+        expect(await pricing.getBiennialPrice()).to.eql('$8.25');
     });
 
     it('link About', async () => {
         await basePage.fromFooterToAbout();
         expect(await basePage.returnCurrenUrl()).to.contains('about');
     });
-
     
 });

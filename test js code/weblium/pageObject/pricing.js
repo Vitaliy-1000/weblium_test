@@ -20,14 +20,18 @@ class Pricing {
         const monthlyPrice = await this.textAlingCenter.get(3);
         return await monthlyPrice.getText();
     }
-
+/********************************************/
     async getAnnualPrice() {
-
+        const annualPrice = await this.textAlingCenter.get(6);
+        return await annualPrice.getText();
     }
 
     async getBiennialPrice() {
-        
+        const biennialPrice = await this.textAlingCenter.get(10);
+        return await biennialPrice.getText();
     }
+
+/********************************************/    
 };
 
 module.exports = Pricing;
