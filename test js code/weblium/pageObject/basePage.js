@@ -29,7 +29,7 @@ class BasePage {
     }
 
     async FromFooterToPortfolio(){
-
+        return await this.footer.clickPortfolio();
     };
 };
 

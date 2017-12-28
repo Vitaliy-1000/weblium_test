@@ -1,6 +1,7 @@
 const { element, elements } = require('wd-interface');
 
 const Pricing = require('./pricing');
+const Portfolio = require('./portfolio');
 
 class Footer {
     constructor() {
@@ -22,13 +23,16 @@ class Footer {
         return new Pricing();
     }
 
+/****************************************************************/
 
     async clickPortfolio() {
         const footer = await elements(this.footerSelector).get(21);
-        const pricing = await footer.getElements('a').get(2);
-        await pricing.click();
+        const portfolio = await footer.getElements('a').get(2);
+        await portfolio.click();
+        return new Portfolio();
     }
 
+/***************************************************************/
    
 };
 
