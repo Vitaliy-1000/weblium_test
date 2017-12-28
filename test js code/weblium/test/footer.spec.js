@@ -1,7 +1,7 @@
 const BasePage = require('../pageObject/basePage');
 
 const { expect } = require('chai');
-describe('landing lincks', () => {
+describe('Landing lincks', () => {
     const basePage = new BasePage();
     
     // before(async () => {
@@ -49,11 +49,11 @@ describe('landing lincks', () => {
 /****************************************************************************/
 
     it('linck Portfolio', async () => {
-        const portfolio = await basePage.FromFooterToPortfolio();
-        expect(await basePage.returnCurrenUrl()).to.contains('portfolio');
-        expect(await portfolio.getPageTitleText()).to.contains('Portfolio');
-        expect(await portfolio.getUSDForAnswer()).to.eql('Get your website for $399');
-        expect(await portfolio.getAnswerForP()).to.eql('Still have doubts?');
+       const portfolio = await basePage.FromFooterToPortfolio();
+       expect(await basePage.returnCurrenUrl()).to.contains('portfolio');
+       expect(await portfolio.getPageTitleText()).to.contains('Portfolio');
+       expect(await portfolio.getUSDForAnswer()).to.eql('Get your website for $399');
+       expect(await portfolio.getAnswerForP()).to.eql('Still have doubts?');
 
     });
   
