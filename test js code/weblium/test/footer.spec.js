@@ -46,10 +46,17 @@ describe('landing lincks', () => {
 //     });
 // 
 
+/****************************************************************************/
+
     it('linck Portfolio', async () => {
         const portfolio = await basePage.FromFooterToPortfolio();
         expect(await basePage.returnCurrenUrl()).to.contains('portfolio');
         expect(await portfolio.getPageTitleText()).to.contains('Portfolio');
+        expect(await portfolio.getUSDForAnswer()).to.eql('Get your website for $399');
+        expect(await portfolio.getAnswerForP()).to.eql('Still have doubts?');
+
     });
-    
+  
+/****************************************************************************/
+
 });
