@@ -20,7 +20,6 @@ class LoginPage {
         return await this.browser.getUrl();
     }
 
-
 };
 
 module.exports = LoginPage;

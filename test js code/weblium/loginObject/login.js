@@ -2,7 +2,6 @@ const { element, elements, client } = require('wd-interface');
 
 class Login {
     constructor() {
-        this.firstName = element('#sign-up-name'),
         this.pageLoginText = element('.title__inner'),
         this.loginUrl = 'https://weblium.com/login',
         this.email = '#id5',
