@@ -41,10 +41,12 @@ describe('Login lincks', () => {
     it('go to my profiles', async () => {
         await login.goToMyAccount();
         await login.goToMyProfiles();
-        expect(await loginPage.returnCurrenUrl()).to.contains('profile');
+        //expect(await loginPage.returnCurrenUrl()).to.contains('profile');
         await loginPage.browser.sleep(1500);
-        expect(await element(Myprofile.firstName).isDisplayed()).to.eql(true);
-        expect(await element(Myprofile.lastName).isDisplayed()).to.eql(true);
-
+        //expect(await element(Myprofile.firstName).isDisplayed()).to.eql(true);
+        //expect(await element(Myprofile.lastName).isDisplayed()).to.eql(true);
+        //expect(await element(Myprofile.firstName).getAttribute("value")).to.eql('dereva');       
+        await Myprofile.clearValue();
+        await console.log(await element(Myprofile.firstName).getAttribute("value"));
     });
 });

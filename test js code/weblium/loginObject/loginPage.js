@@ -5,7 +5,6 @@ const Login = require('./login');
 class LoginPage {
     constructor() {
         this.browser = client().chrome();
-        this.login = new Login();
     }
 
     async goToLogin() {
