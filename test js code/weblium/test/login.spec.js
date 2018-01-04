@@ -21,16 +21,16 @@ describe('Login lincks', () => {
         expect(await loginPage.returnCurrenUrl()).to.contains('login');
         expect(await login.getTextPageLogin()).to.contains('Log in');
     });
-*/
 
-/*
+
+
     it('login form', async () => {
         expect(await element(login.email).isDisplayed()).to.eql(true);
         expect(await element(login.password).isDisplayed()).to.eql(true);
         expect(await element(login.submitLogin).isDisplayed()).to.eql(true);
     });
-*/
-/*
+
+
     it('go to my account', async () => {
         await login.goToMyAccount();
         await loginPage.browser.sleep(1500);
@@ -38,15 +38,17 @@ describe('Login lincks', () => {
         expect(await login.getElementMyAccount()).to.eql('My websites');
     });
 */
+
     it('go to my profiles', async () => {
         await login.goToMyAccount();
         await login.goToMyProfiles();
         //expect(await loginPage.returnCurrenUrl()).to.contains('profile');
         await loginPage.browser.sleep(1500);
-        //expect(await element(Myprofile.firstName).isDisplayed()).to.eql(true);
-        //expect(await element(Myprofile.lastName).isDisplayed()).to.eql(true);
-        //expect(await element(Myprofile.firstName).getAttribute("value")).to.eql('dereva');       
+        expect(await element(Myprofile.firstName).isDisplayed()).to.eql(true);
+        expect(await element(Myprofile.lastName).isDisplayed()).to.eql(true);
+        expect(await element(Myprofile.firstName).getAttribute("value")).to.eql('dereva');       
         //await Myprofile.clearValue();
-        await console.log(await element(Myprofile.firstName).getAttribute("value"));
+        //await console.log(await element(Myprofile.firstName).getAttribute("value"));
     });
+
 });
