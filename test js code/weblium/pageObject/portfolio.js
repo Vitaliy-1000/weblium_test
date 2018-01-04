@@ -11,12 +11,12 @@ class Portfolio {
     }
 
     async getUSDForAnswer() {
-        const getElementP = await this.getPForDiv.get(0);
+        const getElementP = await this.getPForDiv.get(1);
         return await getElementP.getText();
     }
 
     async getAnswerForP() {
-        const getAnswer = await this.getPForDiv.get(1);
+        const getAnswer = await this.getPForDiv.get(2);
         return await getAnswer.getText();
     }
 

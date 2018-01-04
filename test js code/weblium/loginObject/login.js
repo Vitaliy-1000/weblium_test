@@ -28,7 +28,7 @@ class Login {
     }
 
     async goToMyProfiles() {
-        const profiles = element(this.leftMenuProfile);
+        const profiles = element('a.left-nav__link[href="/myaccount/profile"]');
         await profiles.click();
         return new Login();
     }
