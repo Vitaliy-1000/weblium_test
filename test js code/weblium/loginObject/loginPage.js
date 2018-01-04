@@ -1,5 +1,4 @@
 const { elements, element, client } = require('wd-interface');
-
 const Login = require('./login');
 
 class LoginPage {

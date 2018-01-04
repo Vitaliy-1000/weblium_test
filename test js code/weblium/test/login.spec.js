@@ -46,7 +46,7 @@ describe('Login lincks', () => {
         //expect(await element(Myprofile.firstName).isDisplayed()).to.eql(true);
         //expect(await element(Myprofile.lastName).isDisplayed()).to.eql(true);
         //expect(await element(Myprofile.firstName).getAttribute("value")).to.eql('dereva');       
-        await Myprofile.clearValue();
+        //await Myprofile.clearValue();
         await console.log(await element(Myprofile.firstName).getAttribute("value"));
     });
 });
