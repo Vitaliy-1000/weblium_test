@@ -6,8 +6,7 @@ class Login {
         this.loginUrl = 'https://weblium.com/login',
         this.email = '#id5',
         this.password = '#id9',
-        this.submitLogin = '[title="Login"]',
-        this.leftMenuProfile = 'a.left-nav__link[href="/myaccount/profile"]'    
+        this.submitLogin = '[title="Login"]'   
     }
 
     async getTextPageLogin() {
@@ -18,19 +17,13 @@ class Login {
         await element(this.email).sendKeys('dereva@dereva');
         await element(this.password).sendKeys('123123');
         await element(this.submitLogin).click();
-        return new Login();
+        return this;
     }
 
     async getElementMyAccount() {
         const myWebsites = element('a.left-nav__link[href="/myaccount/websites"]');
         return await myWebsites.getText();
-        return new Login();
-    }
-
-    async goToMyProfiles() {
-        const profiles = element('a.left-nav__link[href="/myaccount/profile"]');
-        await profiles.click();
-        return new Login();
+        return this;
     }
 
 };
